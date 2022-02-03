@@ -1,7 +1,7 @@
 package ru.netology.manager;
 
 import ru.netology.domain.Issue;
-import ru.netology.ru.netology.repository.IssueRepository;
+import ru.netology.repository.IssueRepository;
 
 import java.util.*;
 import java.util.function.Predicate;

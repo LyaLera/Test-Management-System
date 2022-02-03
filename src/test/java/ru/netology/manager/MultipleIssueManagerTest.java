@@ -3,7 +3,7 @@ package ru.netology.manager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Issue;
-import ru.netology.ru.netology.repository.IssueRepository;
+import ru.netology.repository.IssueRepository;
 
 import java.util.Collection;
 import java.util.List;
