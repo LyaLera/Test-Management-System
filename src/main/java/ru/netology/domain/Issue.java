@@ -1,10 +1,12 @@
 package ru.netology.domain;
 
+import java.util.Set;
+
 public class Issue implements Comparable<Issue> {
     private int id;
     private String name;
     private String author;
-    private String label;
+    private Set<String> label;
     private String assignee;
     private boolean isOpened;
     private int date;
@@ -18,7 +20,7 @@ public class Issue implements Comparable<Issue> {
     }
 
 
-    public String getLabel() {
+    public Set<String> getLabel() {
         return label;
     }
 
@@ -37,7 +39,8 @@ public class Issue implements Comparable<Issue> {
         return opened;
     }
 
-    public Issue(int id, String name, String author, String label, String assignee, boolean isOpened, int date) {
+
+    public Issue(int id, String name, String author, Set<String> label, String assignee, boolean isOpened, int date) {
         this.id = id;
         this.name = name;
         this.author = author;
@@ -50,5 +53,18 @@ public class Issue implements Comparable<Issue> {
     @Override
     public int compareTo(Issue o) {
         return date - o.date;
+    }
+
+    @Override
+    public String toString() {
+        return "Issue{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", label=" + label +
+                ", assignee='" + assignee + '\'' +
+                ", isOpened=" + isOpened +
+                ", date=" + date +
+                '}';
     }
 }

@@ -6,6 +6,7 @@ import ru.netology.repository.IssueRepository;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,8 +15,8 @@ class EmptyIssueManagerTest {
     IssueManager manager = new IssueManager(repository);
 
 
-    Issue first = new Issue(1, "name1", "author1", "label1", "assignee2", true, 1);
-    Issue second = new Issue(2, "name2", "author1", "label2", "assignee2", false, 2);
+    Issue first = new Issue(1, "name1", "author1", Set.of("label1"), "assignee2", true, 1);
+    Issue second = new Issue(2, "name2", "author1", Set.of("label2"), "assignee2", false, 2);
 
     @Test
     public void shouldNotFindIfOpenedIfEmpty() {
@@ -54,8 +55,8 @@ class EmptyIssueManagerTest {
     @Test
     public void shouldNotFilterByLabelIfEmpty() {
 
-        Collection<Issue> actual = manager.filterByLabel("label1");
-        Collection<Issue> expected = List.of();
+        Set<Issue> actual = manager.filterByLabel(Set.of("label1"));
+        Set<Issue> expected = Set.of();
 
         assertEquals(expected, actual);
     }
