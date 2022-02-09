@@ -18,7 +18,7 @@ public class IssueManager {
         repository.save(issue);
     }
 
-    public Collection<Issue> findIfOpened(boolean isOpened) {
+    public Collection<Issue> findIfOpened() {
         List<Issue> result = new ArrayList<>();
         for (Issue issue : repository.getAll()) {
             if (issue.getIsOpened()) {

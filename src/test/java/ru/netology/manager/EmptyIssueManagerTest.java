@@ -21,7 +21,7 @@ class EmptyIssueManagerTest {
     @Test
     public void shouldNotFindIfOpenedIfEmpty() {
 
-        Collection<Issue> actual = manager.findIfOpened(true);
+        Collection<Issue> actual = manager.findIfOpened();
         Collection<Issue> expected = List.of();
 
         assertEquals(expected, actual);

@@ -19,7 +19,7 @@ public class SingleIssueManagerTest {
     Issue second = new Issue(2, "name2", "author1", Set.of("label2"), "assignee2", false, 2);
     Issue third = new Issue(3, "name3", "author2", Set.of("label3"), "assignee1", false, 3);
     Issue fourth = new Issue(4, "name4", "author1", Set.of("label4"), "assignee2", true, 1);
-    Issue fifth = new Issue(5, "name5", "author2", Set.of("label5"), "assignee2", false, 2);
+    Issue fifth = new Issue(5, "name5", "author2", Set.of("label1"), "assignee2", false, 2);
     Issue sixth = new Issue(6, "name6", "author2", Set.of("label6"), "assignee1", true, 4);
 
 
@@ -28,7 +28,7 @@ public class SingleIssueManagerTest {
 
         manager.add(fourth);
 
-        Collection<Issue> actual = manager.findIfOpened(true);
+        Collection<Issue> actual = manager.findIfOpened();
         Collection<Issue> expected = List.of(fourth);
 
         assertEquals(expected, actual);

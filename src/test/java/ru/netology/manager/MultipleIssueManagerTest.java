@@ -47,12 +47,11 @@ public class MultipleIssueManagerTest {
     @Test
     public void shouldFindIfOpened() {
 
-        Collection<Issue> actual = manager.findIfOpened(true);
+        Collection<Issue> actual = manager.findIfOpened();
         Collection<Issue> expected = List.of(first, fourth, ninth, sixth, eighth);
 
         assertEquals(expected, actual);
     }
-
 
     @Test
     public void shouldOpenById() {
